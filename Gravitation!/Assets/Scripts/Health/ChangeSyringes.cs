@@ -20,12 +20,21 @@ public class ChangeSyringes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(heal.hp){
-            case 4:
-                spriteRenderers[spriteRenderers.Length - 1].sprite = sprite1;
-                break;
+        if(heal.hp <= 4){
+            spriteRenderers[4].sprite = sprite1;
         }
-        
+        if(heal.hp <= 3){
+            spriteRenderers[3].sprite = sprite1;
+        }
+        if(heal.hp <= 2){
+            spriteRenderers[2].sprite = sprite1;
+        }
+        if(heal.hp <= 1){
+            spriteRenderers[1].sprite = sprite1;
+        }
+        if(heal.hp <= 0){
+            spriteRenderers[0].sprite = sprite1;
+        }        
     }
 }
 
