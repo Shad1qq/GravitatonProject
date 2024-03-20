@@ -3,6 +3,8 @@ namespace Scripts.Health{
 public class Apple : MonoBehaviour
 {
     public Health hp;
+    
+    
     void Start()
     {
         
@@ -14,8 +16,9 @@ public class Apple : MonoBehaviour
         
     }
     private void OnTriggerEnter2D(Collider2D other) {
-            
+        
         if(other.gameObject.CompareTag("Player")){
+            
             hp.hp += 1;
             Destroy(this.gameObject);
         }

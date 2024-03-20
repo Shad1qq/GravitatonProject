@@ -9,6 +9,7 @@ namespace Scripts.Health{
 public class ChangeSyringes : MonoBehaviour
 {
     [SerializeField] private Sprite sprite1;
+    
     [SerializeField] private Animator anims;
     [SerializeField] private Animator anims1;
     [SerializeField] private Animator anims2;
@@ -29,18 +30,31 @@ public class ChangeSyringes : MonoBehaviour
         if(heal.hp <= 4){
             spriteRenderers[4].sprite = sprite1;
             anims.SetBool("StartFill1", true);
+            if(heal.hp > 4){
+                anims.SetBool("StartFill1", false);
+        }   
         }
+
         if(heal.hp <= 3){
             spriteRenderers[3].sprite = sprite1;
             anims1.SetBool("StartFill2", true);
+            if(heal.hp > 3){
+                anims1.SetBool("StartFill2", false);
+            }
         }
         if(heal.hp <= 2){
             spriteRenderers[2].sprite = sprite1;
             anims2.SetBool("StartFill3", true);
+            if(heal.hp > 2){
+                anims2.SetBool("StartFill3", false);
+            }
         }
         if(heal.hp <= 1){
             spriteRenderers[1].sprite = sprite1;
             anims3.SetBool("StartFill4", true);
+            if(heal.hp > 1){
+                anims3.SetBool("StartFill4", false);
+            }
         }
         if(heal.hp <= 0){
             spriteRenderers[0].sprite = sprite1;
